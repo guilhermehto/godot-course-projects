@@ -1,0 +1,37 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://environment/skybox_sideHills.png" type="Texture" id=1]
+[ext_resource path="res://environment/dirt_grass.png" type="Texture" id=2]
+
+[node name="Map" type="Node" index="0"]
+
+[node name="Background" type="Sprite" parent="." index="0"]
+
+position = Vector2( 412.873, 685.865 )
+scale = Vector2( 2.8663, 2.8663 )
+z_index = -5
+texture = ExtResource( 1 )
+_sections_unfolded = [ "Z Index" ]
+
+[node name="Grass" type="Sprite" parent="." index="1"]
+
+position = Vector2( 128, 1152 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 2 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="Grass2" type="Sprite" parent="." index="2"]
+
+position = Vector2( 384, 1152 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 2 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="Grass3" type="Sprite" parent="." index="3"]
+
+position = Vector2( 640, 1152 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 2 )
+_sections_unfolded = [ "Transform" ]
+
+
