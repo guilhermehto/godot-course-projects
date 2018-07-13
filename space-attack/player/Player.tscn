@@ -1,0 +1,53 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://player/Player.gd" type="Script" id=1]
+[ext_resource path="res://player/PlayerProjectile.tscn" type="PackedScene" id=2]
+[ext_resource path="res://player/playerShip1_blue.png" type="Texture" id=3]
+
+[sub_resource type="CircleShape2D" id=1]
+
+custom_solver_bias = 0.0
+radius = 50.708
+
+[node name="Player" type="KinematicBody2D" index="0" groups=[
+"friendly",
+]]
+
+editor/display_folded = true
+z_index = 5
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+collision/safe_margin = 0.08
+script = ExtResource( 1 )
+_sections_unfolded = [ "Z Index" ]
+Projectile = ExtResource( 2 )
+
+[node name="Sprite" type="Sprite" parent="." index="0"]
+
+texture = ExtResource( 3 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." index="1"]
+
+shape = SubResource( 1 )
+
+[node name="LeftGun" type="Position2D" parent="." index="2"]
+
+position = Vector2( -33, 10.3276 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="RightGun" type="Position2D" parent="." index="3"]
+
+position = Vector2( 33, 10.3276 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="ShotInterval" type="Timer" parent="." index="4"]
+
+process_mode = 1
+wait_time = 0.25
+one_shot = false
+autostart = false
+
+[connection signal="timeout" from="ShotInterval" to="." method="_on_ShotInterval_timeout"]
+
+

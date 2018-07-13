@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Projectile.tscn" type="PackedScene" id=1]
+[ext_resource path="res://enemy/EnemyProjectile.gd" type="Script" id=2]
+[ext_resource path="res://enemy/laserRed03.png" type="Texture" id=3]
+
+[node name="EnemyProjectile" index="0" instance=ExtResource( 1 )]
+
+script = ExtResource( 2 )
+Damage = 10
+Speed = 1500
+
+[node name="Sprite" parent="." index="1"]
+
+texture = ExtResource( 3 )
+
+[connection signal="body_entered" from="." to="." method="_on_Projectile_body_entered"]
+
+[connection signal="screen_exited" from="VisibilityNotifier2D" to="." method="_on_VisibilityNotifier2D_screen_exited"]
+
+
