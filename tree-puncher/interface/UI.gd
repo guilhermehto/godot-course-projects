@@ -13,7 +13,7 @@ func _process(delta):
 	$TimeLeft.value -= delta
 	if $TimeLeft.value <= 0:
 		$TimeLeft.value = 0
-		emit_signal("time_up")
+		emit_signal('time_up')
 		set_process(false)
 		
 

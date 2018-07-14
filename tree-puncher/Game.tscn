@@ -34,11 +34,13 @@ wait_time = 2.0
 one_shot = false
 autostart = false
 
+[connection signal="game_ended" from="." to="Player" method="_on_Game_game_ended"]
+
 [connection signal="hit_by_axe" from="Player" to="." method="_on_Player_hit_by_axe"]
 
-[connection signal="punched_tree" from="Player" to="Tree" method="_on_Player_punched_tree"]
-
 [connection signal="punched_tree" from="Player" to="UI" method="_on_Player_punched_tree"]
+
+[connection signal="punched_tree" from="Player" to="Tree" method="_on_Player_punched_tree"]
 
 [connection signal="time_up" from="UI" to="." method="_on_UI_time_up"]
 

@@ -8,6 +8,6 @@ func initialize_trunk(left_axe, right_axe):
 
 func punched(player_position):
 	if player_position > global_position.x:
-		$Animation.play("fly_left")
+		$Animation.play('fly_left')
 	else:
-		$Animation.play("fly_right")
+		$Animation.play('fly_right')
